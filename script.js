@@ -67,3 +67,72 @@ const blockButton = document.getElementById('block-distractions');
 blockButton.addEventListener('click', () => {
   alert('¡Redes sociales bloqueadas! Evita distracciones y concéntrate en tus estudios.');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    generateScheduleTable();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    generateScheduleTable(); // Generar tabla de horarios al cargar
+  
+    document.getElementById("toggle-theme").addEventListener("click", toggleTheme);
+    document.getElementById("block-distractions").addEventListener("click", blockDistractions);
+  });
+  
+  function toggleTheme() {
+    document.body.classList.toggle("night-mode");
+    document.getElementById("toggle-theme").textContent = 
+      document.body.classList.contains("night-mode") ? "Modo Diurno" : "Modo Nocturno";
+  }
+  
+  function blockDistractions() {
+    alert("¡Redes sociales bloqueadas! Evita distracciones y concéntrate en tus estudios.");
+  }
+  
+  function generateScheduleTable() {
+    let tbody = document.querySelector("#schedule tbody");
+    tbody.innerHTML = ""; // Limpia la tabla antes de generarla
+  
+    for (let hour = 7; hour <= 22; hour++) { // Horario de 7:00 a 22:00
+      let row = document.createElement("tr");
+  
+      // Celda de la hora
+      let timeCell = document.createElement("td");
+      timeCell.textContent = `${hour}:00 - ${hour + 1}:00`;
+      row.appendChild(timeCell);
+  
+      // Celdas para cada día de la semana
+      for (let i = 1; i <= 7; i++) {
+        let cell = document.createElement("td");
+        cell.dataset.hour = hour;
+        cell.dataset.day = i;
+        row.appendChild(cell);
+      }
+  
+      tbody.appendChild(row);
+    }
+  }
+  
+  function addActivity() {
+    let activityName = document.getElementById("activity").value;
+    let day = document.getElementById("day").value;
+    let startTime = parseInt(document.getElementById("start").value.split(":")[0]);
+    let endTime = parseInt(document.getElementById("end").value.split(":")[0]);
+  
+    if (!activityName || isNaN(startTime) || isNaN(endTime) || startTime >= endTime) {
+      alert("Por favor, ingresa datos válidos.");
+      return;
+    }
+  
+    let cells = document.querySelectorAll(`#schedule tbody td[data-day="${day}"]`);
+    
+    for (let cell of cells) {
+      let cellHour = parseInt(cell.dataset.hour);
+      
+      if (cellHour >= startTime && cellHour < endTime) {
+        cell.innerHTML += `<div class="activity">${activityName}</div>`;
+        cell.style.backgroundColor = "#D1C4E9"; // Color para resaltar
+      }
+    }
+  }
+  
