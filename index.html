@@ -23,8 +23,50 @@
 
   <section id="horarios">
     <h2>Generador Automático de Horarios</h2>
-    <button id="generate-schedule">Generar Horario</button>
-    <div id="schedule-output"></div>
+    <div class="schedule-container">
+        <table id="schedule">
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se generan las filas con JS -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="activity-form">
+        <h2>Agregar Actividad</h2>
+        <label for="activity">Actividad:</label>
+        <input type="text" id="activity" placeholder="Ej. Estudio, Gym">
+        
+        <label for="day">Día:</label>
+        <select id="day">
+            <option value="1">Lunes</option>
+            <option value="2">Martes</option>
+            <option value="3">Miércoles</option>
+            <option value="4">Jueves</option>
+            <option value="5">Viernes</option>
+            <option value="6">Sábado</option>
+            <option value="7">Domingo</option>
+        </select>
+        
+        <label for="start">Hora de inicio:</label>
+        <input type="time" id="start">
+        
+        <label for="end">Hora de fin:</label>
+        <input type="time" id="end">
+        
+        <button id="add-activity">Añadir</button>
+    </div>
   </section>
 
   <section id="distraction-block">
