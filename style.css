@@ -1,66 +1,126 @@
-/* Estilos básicos */
-body {
-  font-family: Arial, sans-serif;
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🎨 Estilos generales */
+body {
+  background-color: #f4f4f9;
   color: #333;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* 📌 Encabezado */
 header {
-  background-color: #4CAF50;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
   color: white;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-button {
+/* 🟢 Botón de Modo Nocturno */
+#toggle-theme {
+  background-color: white;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+#toggle-theme:hover {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin: 10px;
 }
 
-button:hover {
-  background-color: #45a049;
+/* 🎯 Secciones */
+section {
+  background: white;
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-/* Modo Nocturno */
-body.night-mode {
-  background-color: #121212;
-  color: #fff;
+section h2 {
+  font-weight: 600;
+  color: #4CAF50;
+  margin-bottom: 15px;
 }
 
-body.night-mode header {
-  background-color: #333;
-}
-
-body.night-mode button {
-  background-color: #333;
-  color: #fff;
-}
-
+/* ⏳ Temporizador Pomodoro */
 #timer {
   font-size: 2rem;
-  text-align: center;
-}
-
-#generate-schedule {
+  font-weight: bold;
+  padding: 15px;
+  background: #ff5757;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
   margin-top: 10px;
 }
 
-/* Sección de Pomodoro */
-#timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+/* 🎮 Botones */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Bloqueo de Distracciones */
-#distraction-block {
-  margin-top: 20px;
-  text-align: center;
+button:hover {
+  background-color: #388E3C;
+  transform: scale(1.05);
+}
+
+/* 🌙 Modo Nocturno */
+body.night-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.night-mode section {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.night-mode header {
+  background: linear-gradient(90deg, #333, #444);
+}
+
+body.night-mode button {
+  background-color: #666;
+}
+
+body.night-mode button:hover {
+  background-color: #888;
+}
+
+/* 📱 Diseño responsivo */
+@media (max-width: 768px) {
+  section {
+    width: 90%;
+  }
+
+  header {
+    font-size: 1.3em;
+  }
 }
