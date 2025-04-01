@@ -124,3 +124,106 @@ body.night-mode button:hover {
     font-size: 1.3em;
   }
 }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #3700b3;
+  }
+  
+  .schedule-container {
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+  }
+  
+  #schedule {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+  }
+  
+  #schedule th, #schedule td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #schedule th {
+    background-color: #6200ea;
+    color: white;
+  }
+  
+  .activity-form {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activity-form input, .activity-form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  body.night-mode {
+    background-color: #333;
+    color: #f4f4f4;
+  }
+  
+  body.night-mode header {
+    background-color: #6200ea;
+  }
+  
+  body.night-mode button {
+    background-color: #3700b3;
+  }
+  
+  body.night-mode .activity-form {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  body.night-mode #schedule th {
+    background-color: #3700b3;
+  }
+  
+  body.night-mode #schedule td {
+    background-color: #555;
+  }
+  .activity {
+    background-color: #6200ea;
+    color: white;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  
